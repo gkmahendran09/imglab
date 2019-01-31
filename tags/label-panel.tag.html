@@ -98,7 +98,14 @@
                 <li class="li-fpoints grey-border" each={fPoint,fid in targetShape.featurePoints}>
                     <div class="input-group small">
                         <span class={selectedPoint: fPoint.id === this.opts.pointId, input-group-addon: true, drag-handler: fPoint.id !== this.opts.pointId}></span>
-                        <input type="text" class="form-control" value="{ fPoint.label }" onchange={updateFPointLabel} placeholder="Label the feature point">
+                        <!-- <input type="text" class="form-control" value="{ fPoint.label }" onchange={updateFPointLabel} placeholder="Label the feature point"> -->
+                        <select value="{ fPoint.label }" class="form-control" onchange={updateFPointLabel}>
+                            <!-- <option value="jaw_line_1">Jaw Line 1</option>
+                            <option value="jaw_line_2">Jaw Line 2</option> -->
+                            <!-- <option value={ l.id } each={l in landmarksArray} disabled={disableLandMarkOption(this)}>{ l.text }</option> -->
+                            <option value=''>Please select a label</option>
+                            <option value={ l.id } each={l in landmarksArray}>{ l.text }</option>
+                        </select>
                         <div class="input-group-btn" onclick={deleteTag}>
                             <i class="icon icon-trash-empty"></i>
                         </div>
@@ -109,6 +116,7 @@
     </div>
     <script>
         var tag = this;
+        tag.landmarksArray = landmarksArray;
         tag.targetShape = getShape(this.opts.id);
         tag.tags = tag.targetShape.tags.join(", ");
 
@@ -229,6 +237,48 @@
             eventBus.off('removeLabelPanelTag');
             eventBus.off('unmountLabelPanel');
         })
+
+        // tag.on('update', function() {
+        //     let temp = landmarksArray;
+        //     let updatedLandmarks = [];
+        //     temp.forEach(function(t) {
+        //         let found = 0;
+        //         tag.targetShape.featurePoints.forEach(function(s) {
+        //             if(s.label == t.id) {
+        //                 found++;
+        //             }
+        //         });
+
+        //         if(found == 0) {
+        //             updatedLandmarks.push(t);
+        //         }
+        //     });
+
+        //     tag.landmarksArray = updatedLandmarks;
+        // })
+
+        // tag.disableLandMarkOption = function(that) {
+            
+        //     let found = 0;
+        //     tag.targetShape.featurePoints.forEach(function(s) {
+        //         if(s.label == that.l.id && that.fPoint.label != that.l.id) {
+        //             found++;
+        //         }
+        //     });
+
+        //     console.log(that);
+
+        //     // alert(found);
+
+        //     if(found > 0) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+
+        //     return false;
+
+        // }
 
         function array_move(arr, old_index, new_index) {
             if (old_index > new_index){

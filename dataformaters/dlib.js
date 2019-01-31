@@ -37,7 +37,7 @@ function toDlibXML(imgs){
             for(var fPoint_i in fPoints){
                 var fPoint = fPoints [ fPoint_i ];
                 //TODO: pad fPoint_i
-                imgXMLStr += "\t\t\t<part name='"+ fPoint_i +"' x='"+ Math.floor(fPoint.x)+"' y='"+ Math.floor(fPoint.y) +"'/>\n";
+                imgXMLStr += "\t\t\t<part name='"+ fPoint.label +"' x='"+ Math.floor(fPoint.x)+"' y='"+ Math.floor(fPoint.y) +"'/>\n";
             }
             imgXMLStr += "\t\t</box>\n"
         }

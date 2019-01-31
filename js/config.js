@@ -164,7 +164,15 @@ var pluginsStore = {
     }
 }
 
-var suggestedCategories = ["dog", "cat", "car", "vehicle", "truck", "animal", "building", "person"];
+var suggestedCategories = [
+    "Mouth", 
+    "Right eyebrow", 
+    "Left eyebrow", 
+    "Right eye", 
+    "Left eye", 
+    "Nose", 
+    "Jaw"
+];
 var suggestedTags = [];
 var suggestedAttributes = {
     "gender" : ["male", "female", "other"],
