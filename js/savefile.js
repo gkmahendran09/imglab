@@ -3,24 +3,73 @@ function selectFileTypeToSave(){
         title: 'Save/Export as',
         content: `<div style="text-align:center;">
                 <div>
-                    <button class="btn btn-primary savebtn"  onclick="javascript:saveAsNimn()" id="saveAsNimn">Project file</button>
+                    <button class="btn btn-primary savebtn"  onclick="javascript:saveInServer()" id="saveAsNimn">Save in Server</button>
                 </div>
                 <div>
                     <button class="btn btn-primary savebtn" onclick="javascript:saveAsDlibXML()" id="saveAsNimn">Dlib XML</button>
-                </div>
-                <div>
-                    <button class="btn btn-primary savebtn" onclick="javascript:saveAsDlibPts()" id="saveAsNimn">Dlib pts</button>
-                </div>
-                <div>
-                    <button class="btn btn-primary savebtn" onclick="javascript:saveAsCOCO()" id="saveAsCOCO">COCO JSON</button>
-                </div>
-                <div>
-                    <button class="btn btn-primary savebtn" onclick="javascript:saveAsPascalVOC()" id="saveAsPascalVOC">Pascal VOC XML</button>
                 </div>
             <div>`,
         escapeKey: true,
         backgroundDismiss: true,
     });
+}
+
+
+/**
+ * Save label data in server
+ */
+function saveInServer(){
+    var dlibXMLData = toDlibXML(labellingData);
+    
+    askFileName(Object.keys(labellingData).length + "_label_data", function(folderName) {
+        var form_data = new FormData();
+
+        var noOfFiles = $("#browseImages").prop("files").length;
+        for(var i=0; i<noOfFiles; i++) {
+            var file_data = $("#browseImages").prop("files")[i];
+            form_data.append("file_" + i, file_data);
+        }
+        form_data.append("folderName", folderName);
+        form_data.append("dlibXMLData", dlibXMLData);
+        form_data.append("labellingData", JSON.stringify(labellingData));
+
+        $('#full-screen-loader').show();
+
+        $.ajax({
+            url: 'SaveInServer.php',
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,                         
+            type: 'post',
+            success: function(data){
+                $('#full-screen-loader').hide();
+                alert(data);
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                $('#full-screen-loader').hide();
+                alert(msg);
+            }
+        });
+
+    }, 'Folder Name');
 }
 
 /**
@@ -148,10 +197,11 @@ function download(data, filename, type, encoding) {
  * @param {string} suggestedName 
  * @param {function} cb 
  */
-function askFileName(suggestedName, cb){
+function askFileName(suggestedName, cb, modalTitle){
     suggestedName || (suggestedName = "Untitled_imgLab" )
+    modalTitle || (modalTitle = "File Name")
     $.confirm({
-        title: 'File Name',
+        title: modalTitle,
         content: `<input class="form-control"  type"text" id="fileName" value="${suggestedName}" >`,
         buttons: {
             confirm: {

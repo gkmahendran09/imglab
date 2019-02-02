@@ -33,7 +33,7 @@
 		gtag('config', 'UA-119603824-1');
 	</script> -->
 
-	<title>ImgLab - Image Annotation tool</title>
+	<title>Image Annotation Tool</title>
 
 	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="stylesheet" href="css/slider.1.min.css">
@@ -61,9 +61,28 @@
 	<script src="js/thirdparty/jquery-editable-select.min.js"></script>
 	<script src="js/thirdparty/taggle.min.js"></script>
 
+	<style>
+		#full-screen-loader {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.5);
+			color: #fff;
+			text-align: center;
+			font-size: 28px;
+			padding-top: 150px;
+			text-shadow: #eee 0px 3px 20px;
+		}
+	</style>
 </head>
 
 <body>
+	<div id="full-screen-loader">Uploading...</div>
+
 	<div class="container-fluid">
 		<div id="menubar" class="row overlay-color align-items-center" style="height: 50px;">
 			<div class="col-3 col-sm-2 col-md-1 col-xl-1 no-pl">
@@ -72,10 +91,10 @@
 			<div class="col-6 col-sm-6 col-md-7 col-xl-7 text-center">
 				<!-- form-inline input-group -->
 				<div class="row justify-content-center align-content-center">
-					<a href="https://github.com/NaturalIntelligence/imglab">
+					<a href="javascript:;">
 						<img src="img/imglab_logo.png" height="48px" style="margin-top: 2px">
 					</a>
-					<span style="font-size: 2em; margin-top:5px;">Img Lab</span>
+					<span style="font-size: 2em; margin-top:5px;">Image Annotation Tool</span>
 				</div>
 			</div>
 			<div class="col-3 col-sm-4 col-md-4 col-xl-4">
