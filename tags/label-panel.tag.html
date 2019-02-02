@@ -99,12 +99,12 @@
                     <div class="input-group small">
                         <span class={selectedPoint: fPoint.id === this.opts.pointId, input-group-addon: true, drag-handler: fPoint.id !== this.opts.pointId}></span>
                         <!-- <input type="text" class="form-control" value="{ fPoint.label }" onchange={updateFPointLabel} placeholder="Label the feature point"> -->
-                        <select value="{ fPoint.label }" class="form-control" onchange={updateFPointLabel}>
+                        <select class="form-control" onchange={updateFPointLabel}>
                             <!-- <option value="jaw_line_1">Jaw Line 1</option>
                             <option value="jaw_line_2">Jaw Line 2</option> -->
                             <!-- <option value={ l.id } each={l in landmarksArray} disabled={disableLandMarkOption(this)}>{ l.text }</option> -->
                             <option value=''>Please select a label</option>
-                            <option value={ l.id } each={l in landmarksArray}>{ l.text }</option>
+                            <option value={ l.id } each={l in landmarksArray} selected={ fPoint.label == l.id }>{ l.text }</option>
                         </select>
                         <div class="input-group-btn" onclick={deleteTag}>
                             <i class="icon icon-trash-empty"></i>
