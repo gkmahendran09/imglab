@@ -24,9 +24,9 @@ function saveInServer(){
     askFileName(Object.keys(labellingData).length + "_label_data", function(folderName) {
         var form_data = new FormData();
 
-        var noOfFiles = $("#browseImages").prop("files").length;
+        var noOfFiles = fileArray.length;
         for(var i=0; i<noOfFiles; i++) {
-            var file_data = $("#browseImages").prop("files")[i];
+            var file_data = fileArray[i];
             form_data.append("file_" + i, file_data);
         }
         form_data.append("folderName", folderName);

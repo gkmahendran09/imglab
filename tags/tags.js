@@ -122,6 +122,7 @@ riot.tag2('images-slider', '<div class="float-left" style="width: 50px; height: 
             var input = e.srcElement;
             if (input.files && input.files[0]) {
                 for(i=0;i<input.files.length;i++){
+                    fileArray.push(input.files[i]);
                     this.readImageFile(input.files[i]);
                 }
             }

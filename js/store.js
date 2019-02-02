@@ -468,3 +468,5 @@ var landmarksArray = [
         text: 'mouth_68'
     }
 ];
+
+var fileArray = [];
