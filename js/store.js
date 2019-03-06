@@ -196,275 +196,275 @@ var labellingData = {};
 
 var landmarksArray = [
     {
-        id: 1,
+        id: 0,
         text: 'jaw_line_1'
     },
     {
-        id: 2,
+        id: 1,
         text: 'jaw_line_2'
     },
     {
-        id: 3,
+        id: 2,
         text: 'jaw_line_3'
     },
     {
-        id: 4,
+        id: 3,
         text: 'jaw_line_4'
     },
     {
-        id: 5,
+        id: 4,
         text: 'jaw_line_5'
     },
     {
-        id: 6,
+        id: 5,
         text: 'jaw_line_6'
     },
     {
-        id: 7,
+        id: 6,
         text: 'jaw_line_7'
     },
     {
-        id: 8,
+        id: 7,
         text: 'jaw_line_8'
     },
     {
-        id: 9,
+        id: 8,
         text: 'jaw_line_9'
     },
     {
-        id: 10,
+        id: 9,
         text: 'jaw_line_10'
     },
     {
-        id: 11,
+        id: 10,
         text: 'jaw_line_11'
     },
     {
-        id: 12,
+        id: 11,
         text: 'jaw_line_12'
     },
     {
-        id: 13,
+        id: 12,
         text: 'jaw_line_13'
     },
     {
-        id: 14,
+        id: 13,
         text: 'jaw_line_14'
     },
     {
-        id: 15,
+        id: 14,
         text: 'jaw_line_15'
     },
     {
-        id: 16,
+        id: 15,
         text: 'jaw_line_16'
     },
     {
-        id: 17,
+        id: 16,
         text: 'jaw_line_17'
     },
     {
-        id: 18,
+        id: 17,
         text: 'left_eye_brow_18'
     },
     {
-        id: 19,
+        id: 18,
         text: 'left_eye_brow_19'
     },
     {
-        id: 20,
+        id: 19,
         text: 'left_eye_brow_20'
     },
     {
-        id: 21,
+        id: 20,
         text: 'left_eye_brow_21'
     },
     {
-        id: 22,
+        id: 21,
         text: 'left_eye_brow_22'
     },
     {
+        id: 22,
+        text: 'right_eye_brow_23'
+    },
+    {
         id: 23,
-        text: 'left_eye_brow_23'
+        text: 'right_eye_brow_24'
     },
     {
         id: 24,
-        text: 'left_eye_brow_24'
+        text: 'right_eye_brow_25'
     },
     {
         id: 25,
-        text: 'left_eye_brow_25'
+        text: 'right_eye_brow_26'
     },
     {
         id: 26,
-        text: 'left_eye_brow_26'
+        text: 'right_eye_brow_27'
     },
     {
         id: 27,
-        text: 'left_eye_brow_27'
-    },
-    {
-        id: 28,
         text: 'nose_28'
     },
     {
-        id: 29,
+        id: 28,
         text: 'nose_29'
     },
     {
-        id: 30,
+        id: 29,
         text: 'nose_30'
     },
     {
-        id: 31,
+        id: 30,
         text: 'nose_31'
     },
     {
-        id: 32,
+        id: 31,
         text: 'nose_32'
     },
     {
-        id: 33,
+        id: 32,
         text: 'nose_33'
     },
     {
-        id: 34,
+        id: 33,
         text: 'nose_34'
     },
     {
-        id: 35,
+        id: 34,
         text: 'nose_35'
     },
     {
-        id: 36,
+        id: 35,
         text: 'nose_36'
     },
     {
-        id: 37,
+        id: 36,
         text: 'left_eye_37'
     },
     {
-        id: 38,
+        id: 37,
         text: 'left_eye_38'
     },
     {
-        id: 39,
+        id: 38,
         text: 'left_eye_39'
     },
     {
-        id: 40,
+        id: 39,
         text: 'left_eye_40'
     },
     {
-        id: 41,
+        id: 40,
         text: 'left_eye_41'
     },
     {
-        id: 42,
+        id: 41,
         text: 'left_eye_42'
     },
     {
-        id: 43,
+        id: 42,
         text: 'right_eye_43'
     },
     {
-        id: 44,
+        id: 43,
         text: 'right_eye_44'
     },
     {
-        id: 45,
+        id: 44,
         text: 'right_eye_45'
     },
     {
-        id: 46,
+        id: 45,
         text: 'right_eye_46'
     },
     {
-        id: 47,
+        id: 46,
         text: 'right_eye_47'
     },
     {
-        id: 48,
+        id: 47,
         text: 'right_eye_48'
     },
     {
-        id: 49,
+        id: 48,
         text: 'mouth_49'
     },
     {
-        id: 50,
+        id: 49,
         text: 'mouth_50'
     },
     {
-        id: 51,
+        id: 50,
         text: 'mouth_51'
     },
     {
-        id: 52,
+        id: 51,
         text: 'mouth_52'
     },
     {
-        id: 53,
+        id: 52,
         text: 'mouth_53'
     },
     {
-        id: 54,
+        id: 53,
         text: 'mouth_54'
     },
     {
-        id: 55,
+        id: 54,
         text: 'mouth_55'
     },
     {
-        id: 56,
+        id: 55,
         text: 'mouth_56'
     },
     {
-        id: 57,
+        id: 56,
         text: 'mouth_57'
     },
     {
-        id: 58,
+        id: 57,
         text: 'mouth_58'
     },
     {
-        id: 59,
+        id: 58,
         text: 'mouth_59'
     },
     {
-        id: 60,
+        id: 59,
         text: 'mouth_60'
     },
     {
-        id: 61,
+        id: 60,
         text: 'mouth_61'
     },
     {
-        id: 62,
+        id: 61,
         text: 'mouth_62'
     },
     {
-        id: 63,
+        id: 62,
         text: 'mouth_63'
     },
     {
-        id: 64,
+        id: 63,
         text: 'mouth_64'
     },
     {
-        id: 65,
+        id: 64,
         text: 'mouth_65'
     },
     {
-        id: 66,
+        id: 65,
         text: 'mouth_66'
     },
     {
-        id: 67,
+        id: 66,
         text: 'mouth_67'
     },
     {
-        id: 68,
+        id: 67,
         text: 'mouth_68'
     }
 ];
